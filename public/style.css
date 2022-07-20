@@ -460,6 +460,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
 }
@@ -480,6 +483,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .z-40 {
   z-index: 40;
+}
+.z-50 {
+  z-index: 50;
 }
 .mx-auto {
   margin-left: auto;
@@ -511,6 +517,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .-ml-4 {
   margin-left: -1rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .block {
   display: block;
@@ -576,6 +585,27 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-3 {
   width: 0.75rem;
 }
+.w-10 {
+  width: 2.5rem;
+}
+.w-\[100px\] {
+  width: 100px;
+}
+.w-\[35rem\] {
+  width: 35rem;
+}
+.w-\[10\] {
+  width: 10;
+}
+.w-\[10rem\] {
+  width: 10rem;
+}
+.w-\[14rem\] {
+  width: 14rem;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
 .shrink-0 {
   flex-shrink: 0;
 }
@@ -611,6 +641,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .gap-10 {
   gap: 2.5rem;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 .overflow-x-hidden {
   overflow-x: hidden;
@@ -681,6 +714,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-fuchsia-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(192 38 211 / var(--tw-bg-opacity));
+}
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .p-2 {
   padding: 0.5rem;

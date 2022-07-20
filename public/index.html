@@ -15,7 +15,7 @@
 <!-- dark mode : dark:bg-[#02101d] dark:text-teal-50-->
 <body class="relative">
   <!------------------------------------HEADER------------------------------------------>
-  <header class="fixed top-0 left-0 right-0 bg-[#fffffff5] shadow-sm z-[11]">
+  <header class="fixed top-0 left-0 right-0 bg-[#fffffff5] shadow-sm z-50">
     <div class="flex w-full md:container mx-auto h-[78px] justify-between px-4 md:px-10">
       <div class="flex items-center w-auto md:w-[10%]">
         <span class="text-5xl">V</span><span class="text-[#f03b65] text-3xl">i</span>
@@ -38,7 +38,8 @@
   </header>
   
   <main class="container px-4 md:px-10 mx-auto">
-    <div>
+
+    <section>
       <div class="flex flex-col my-52 mx-auto relative">
         <div class="flex flex-col gap-1 mx-auto">
           <span class="text-2xl sm:text-3xl md:text-4xl">Hi, there</span>
@@ -56,7 +57,7 @@
           </div>-->
         </div>
       </div>
-    </div>
+    </section>
     <!----------------------------------INFORMATIONS------------------------------------
     <div class="flex justify-center flex-col md:flex-row gap-4 md:gap-8 w-max mb-8 lg:px-20 py-4">
       <div class="flex flex-col">
@@ -185,6 +186,32 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="my-16">
+      <div class="flex flex-col gap- ">
+        <div class="sm:w-[640px]">
+          <h2 class="text-2xl sm:text-3xl text-slate-900 font-[500]">My Latest Works</h2>
+          <hr class="w-8 h-[5px] border-0 bg-[#f03b65] block rounded-full">
+          <p class="mt-4 text-slate-700">Perfect solutions for digital experience</p>
+        </div>
+      </div>
+
+      <div class="slider flex gap-4 overflow-x-hidden mt-4">
+        <div class="relative rounded-lg overflow-x-hidden w-[15rem] shrink-0">
+          <img src="/src/img/project1.png" alt="project1" class="object-cover">
+        </div>
+        <div class="relative rounded-lg overflow-x-hidden w-[15rem] shrink-0">
+          <img src="/src/img/project2.png" alt="project1" class="object-cover">
+        </div>
+        <div class="relative rounded-lg overflow-x-hidden w-[15rem] shrink-0">
+          <img src="/src/img/project3.png" alt="project1" class="object-cover">
+        </div>
+        <div class="relative rounded-lg overflow-x-hidden w-[15rem] shrink-0">
+          <img src="/src/img/project4.png" alt="project1" class="object-cover">
+        </div>
+      </div>
+
     </section>
 
   </main>
