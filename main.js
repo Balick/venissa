@@ -1,2 +1,3 @@
 import './tailwind.css'
-import './src/app'
+import './src/styles/animations.css'
+import './src/js/animations'
