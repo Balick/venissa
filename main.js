@@ -1,1 +1,2 @@
-import './src/tailwind.css'
+import './tailwind.css'
+import './src/app'
