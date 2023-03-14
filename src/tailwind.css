@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-
+.cursor {
+    visibility: hidden;
 }
 
-@layer components {
-    
+.nav {
+    display: none;
 }
