@@ -14,7 +14,9 @@ module.exports = {
         'desktop' : '1280px'
       },
       colors: {
-        'redpink': '#f03b65'
+        'redpink': '#f03b65',
+        'redtransparent': '#f03b6599',
+        'skytransparent': '#87ceeb75',
       }
     },
   },
