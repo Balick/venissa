@@ -12,11 +12,15 @@
 }
 
 #bull-one {
-    box-shadow: 0 0 20px 20px #f03b6599;
+    box-shadow: 0 0 20px 20px #fff1f4;
     animation-name: move-bull-left;
 }
 
 #bull-two {
-    box-shadow: 0 0 20px 20px #87ceeb75;
+    box-shadow: 0 0 20px 20px aliceblue;
     animation-name: move-bull-right;
+}
+
+#profile-photo {
+    box-shadow: 0 0 20px 20px #fff1f4;
 }
