@@ -17,6 +17,9 @@ module.exports = {
         'redpink': '#f03b65',
         'redtransparent': '#f03b6599',
         'skytransparent': '#87ceeb75',
+        'lightcyan': '#f8f7ff',
+        'lightred': '#FFF1F4',
+        'babypowder': '#FAFFFD',
       }
     },
   },
