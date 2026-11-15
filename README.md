@@ -46,9 +46,7 @@ The project gallery and article pages work without JavaScript. JavaScript adds p
 
 ## Contributing
 
-Use English for filenames, documentation, source text and commit messages. Keep commits focused and use a Conventional Commit prefix, for example `feat: add a project category`, `fix: restore keyboard focus` or `docs: explain the content schema`.
-
-Run `npm run format`, `npm run check` and `npm run build` before submitting a change. For interface changes, verify mobile navigation, keyboard focus and reduced motion in a browser.
+For local setup, validation commands, commit conventions and pull requests, see the [contribution guide](CONTRIBUTING.md).
 
 ## License and assets
 
