@@ -1,0 +1,90 @@
+---
+import profile from "../data/profile.json";
+---
+
+<section class="hero" aria-labelledby="intro">
+  <div class="hero-head">
+    <div class="role">
+      <img class="icon" src="/icons/palette.svg" alt="" /> {profile.label}
+    </div>
+    <h1 id="intro">
+      I’m <em>{profile.name}</em>
+      <sup>
+        <img class="icon" src="/icons/stars.svg" alt="" />
+      </sup>
+    </h1>
+    <p>{profile.role}</p>
+  </div>
+  <div class="stage">
+    <div class="halo"></div>
+    <img
+      class="portrait"
+      src={profile.portrait}
+      alt={profile.name}
+      fetchpriority="high"
+    />
+    <a class="seal" href="#contact" aria-label="Discuss a project">
+      <span>HAVE A PROJECT?</span>
+      <img class="icon" src="/icons/arrow-up-right.svg" alt="" />
+      <span>LET’S TALK</span>
+    </a>
+    <div class="side left">
+      <div class="location">
+        <small>BASED IN</small>
+        <b>
+          <img class="icon" src="/icons/geo-alt.svg" alt="" />
+          {profile.city}, {profile.country}
+        </b>
+      </div>
+      <div class="clients">
+        <div class="faces">
+          <img src="/images/client-1.jpg" alt="" />
+          <img src="/images/client-2.jpg" alt="" />
+          <img src="/images/client-3.jpg" alt="" />
+        </div>
+        <strong>
+          {profile.clients} <span>happy clients</span>
+        </strong>
+        <small>{profile.projects} projects completed</small>
+      </div>
+    </div>
+    <div class="side right">
+      <div class="statement">
+        <span aria-hidden="true">“</span>
+        <p>{profile.statement}</p>
+      </div>
+      <div class="tags">
+        <b>Graphic design</b>
+        <b>Web design</b>
+        <b>UI/UX design</b>
+        <b>Development</b>
+      </div>
+    </div>
+    <div class="actions">
+      <a href="#work">
+        My portfolio
+        <i>
+          <img class="icon" src="/icons/arrow-right.svg" alt="" />
+        </i>
+      </a>
+      <a href="#contact">Get in touch</a>
+    </div>
+  </div>
+</section>
+<div class="strip" aria-hidden="true">
+  <div>
+    {Array.from({ length: 3 }, () =>
+      [
+        "Graphic Design",
+        "Web Development",
+        "Visual Identity",
+        "UI/UX Design",
+      ].map((item) => (
+        <>
+          <img class="icon" src="/icons/asterisk.svg" alt="" />
+          <span>{item}</span>
+        </>
+      )),
+    )}
+  </div>
+</div>

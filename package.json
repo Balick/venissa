@@ -1,17 +1,28 @@
 {
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+  "name": "venissa-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A content-driven Astro portfolio template for independent designers.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.23.4"
   },
-  "devDependencies": {
-    "autoprefixer": "^10.4.4",
-    "postcss-cli": "^9.1.0",
-    "tailwindcss": "^3.0.23",
-    "vite": "^4.1.4"
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
-    "scrollreveal": "^4.0.9",
-    "slick-carousel": "^1.8.1"
+    "astro": "^7.4.12"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "typescript": "~5.9.3",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^1.1.2"
   }
 }

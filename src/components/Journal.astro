@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+const articles = (await getCollection("journal")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<section class="journal" id="journal">
+  <div class="wrap section">
+    <div class="eyebrow">
+      <i></i> Journal
+    </div>
+    <h2>
+      Design <em>notes.</em>
+    </h2>
+    {articles.map(({ id, data }) => (
+      <a class="journal-row" href={`/journal/${id}/`}>
+        <small>{data.category}</small>
+        <div>
+          <h3>{data.title}</h3>
+          <p>{data.summary}</p>
+        </div>
+        <img class="icon" src="/icons/arrow-up-right.svg" alt="" />
+      </a>
+    ))}
+  </div>
+</section>
