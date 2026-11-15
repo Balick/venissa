@@ -30,17 +30,39 @@ export default function Hero() {
             fetchPriority="high"
           />
           <a
-            className="seal absolute bg-ink text-white flex items-center justify-center flex-col"
+            className="seal absolute bg-ink text-white"
             href="#contact"
             aria-label="Discuss a project"
           >
-            <span>HAVE A PROJECT?</span>
-            <img
-              className="icon block"
-              src="/icons/arrow-up-right.svg"
-              alt=""
-            />
-            <span>LET’S TALK</span>
+            <svg
+              viewBox="0 0 100 100"
+              className="seal-art"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <defs>
+                <path id="seal-upper" d="M 16 50 A 34 34 0 0 1 84 50" />
+                <path id="seal-lower" d="M 9 50 A 41 41 0 0 0 91 50" />
+              </defs>
+              <text textAnchor="middle">
+                <textPath href="#seal-upper" startOffset="50%">
+                  HAVE A PROJECT?
+                </textPath>
+              </text>
+              <text textAnchor="middle">
+                <textPath href="#seal-lower" startOffset="50%">
+                  LET’S TALK
+                </textPath>
+              </text>
+              <circle cx="50" cy="50" r="20" fill="var(--color-brand)" />
+              <image
+                href="/icons/arrow-up-right.svg"
+                x="40"
+                y="40"
+                width="20"
+                height="20"
+              />
+            </svg>
           </a>
           <div className="side left absolute flex flex-col justify-between text-left">
             <div className="location">
