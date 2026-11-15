@@ -1,2 +1,8 @@
 import { defineConfig } from "astro/config";
-export default defineConfig({ devToolbar: { enabled: false } });
+import react from "@astrojs/react";
+import tailwindcss from "@tailwindcss/vite";
+export default defineConfig({
+  integrations: [react()],
+  vite: { plugins: [tailwindcss()] },
+  devToolbar: { enabled: false },
+});

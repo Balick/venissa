@@ -1,6 +1,6 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../styles/portfolio.css";
 interface Props {
   title: string;
@@ -23,7 +23,7 @@ const { title, description } = Astro.props;
     <a class="skip" href="#main">
       Skip to content
     </a>
-    <Header />
+    <Header client:load />
     <main id="main">
       <slot />
     </main>

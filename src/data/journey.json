@@ -1,0 +1,38 @@
+[
+  {
+    "date": "2018-06-26",
+    "title": "Information gathering",
+    "summary": "The starting point recorded in the original journey.",
+    "detail": "This is the first dated entry in the original portfolio timeline."
+  },
+  {
+    "date": "2022-07-18",
+    "title": "The portfolio begins",
+    "summary": "The first version of the site enters development.",
+    "detail": "The initial project established a shared home for the designer’s profile and work."
+  },
+  {
+    "date": "2022-07-20",
+    "title": "A gallery for selected work",
+    "summary": "Projects gain a dedicated place on the page.",
+    "detail": "The first project section brought examples together so visitors could browse beyond the introduction."
+  },
+  {
+    "date": "2022-08-04",
+    "title": "Space for client feedback",
+    "summary": "The testimonial section takes shape.",
+    "detail": "The early portfolio introduced a section for client voices. The current template keeps this section editable and displays it when approved quotes are available."
+  },
+  {
+    "date": "2023-03-21",
+    "title": "The journey becomes a timeline",
+    "summary": "Dated cards bring the portfolio’s history into view.",
+    "detail": "A vertical line joined the milestones, alternating between left and right on larger screens. This layout carries that idea forward."
+  },
+  {
+    "date": "2026-11-15",
+    "title": "A content-driven portfolio",
+    "summary": "Individual project pages and a design journal arrive.",
+    "detail": "Astro builds each entry from Markdown. New work and articles can now be published by adding a content file."
+  }
+]

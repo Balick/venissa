@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
 @font-face {
   font-family: DM;
   src: url("/fonts/dm-sans.ttf") format("truetype");
@@ -5,12 +8,12 @@
   font-weight: 100 1000;
   font-display: swap;
 }
-:root {
-  --pink: #f03b65;
-  --blush: #ffe7ed;
-  --ink: #221d20;
-  --paper: #fbf8f6;
-  --muted: #6a6066;
+@theme {
+  --color-brand: #f03b65;
+  --color-blush: #ffe7ed;
+  --color-ink: #221d20;
+  --color-paper: #fbf8f6;
+  --color-muted: #6a6066;
 }
 * {
   box-sizing: border-box;
@@ -21,8 +24,7 @@ html {
 }
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  @apply bg-paper text-ink;
   font:
     16px/1.45 DM,
     Arial,
@@ -34,25 +36,24 @@ a {
 }
 button {
   font: inherit;
-  cursor: pointer;
+  @apply cursor-pointer;
 }
 .icon {
   width: 18px;
   height: 18px;
-  display: block;
 }
 .wrap,
 .top,
 .stage {
   width: min(1080px, calc(100% - 96px));
-  margin-inline: auto;
+  @apply mx-auto;
 }
 .skip {
-  position: absolute;
+  @apply absolute;
   top: -70px;
   left: 10px;
   z-index: 8;
-  background: white;
+  @apply bg-white;
   padding: 10px;
 }
 .skip:focus {
@@ -63,17 +64,14 @@ button {
   outline-offset: 3px;
 }
 .top {
-  position: relative;
+  @apply relative;
   z-index: 5;
   margin-top: 24px;
   height: 64px;
   border-radius: 36px;
-  color: white;
-  background: var(--ink);
-  display: flex;
-  align-items: center;
+  @apply text-white bg-ink flex items-center;
   padding: 8px 10px 8px 14px;
-  justify-content: space-between;
+  @apply justify-between;
 }
 .brand,
 .talk,
@@ -83,8 +81,7 @@ button {
 .location b,
 .eyebrow,
 .email {
-  display: inline-flex;
-  align-items: center;
+  @apply inline-flex items-center;
 }
 .brand {
   font-weight: 850;
@@ -93,18 +90,17 @@ button {
 }
 .brand span,
 em {
-  color: var(--pink);
+  @apply text-brand;
 }
 .brand i,
 .actions i,
-summary i,
+.services summary i,
 .link .icon {
-  display: grid;
-  place-items: center;
+  @apply grid place-items-center;
   border-radius: 50%;
 }
 .brand i {
-  background: var(--pink);
+  @apply bg-brand;
   width: 38px;
   height: 38px;
   margin-right: 9px;
@@ -114,7 +110,7 @@ summary i,
   height: 23px;
 }
 .top nav {
-  display: flex;
+  @apply flex;
   gap: 32px;
   font-size: 14px;
 }
@@ -130,12 +126,10 @@ summary i,
 .talk,
 .link {
   border-radius: 40px;
-  font-weight: 700;
+  @apply font-bold;
   gap: 12px;
 }
 .talk {
-  background: var(--paper);
-  color: var(--ink);
   padding: 12px 20px;
 }
 .talk:hover,
@@ -144,14 +138,10 @@ summary i,
   background: #ffd3de;
 }
 .menu {
-  display: none;
+  @apply hidden;
 }
-.hero {
-  overflow: hidden;
-  text-align: center;
-}
+
 .hero-head {
-  position: relative;
   z-index: 1;
   padding-top: 48px;
 }
@@ -191,7 +181,7 @@ em {
   font-style: normal;
 }
 h1 sup {
-  position: absolute;
+  @apply absolute;
   margin: 4px 0 0 5px;
 }
 h1 sup img {
@@ -200,25 +190,20 @@ h1 sup img {
   transform: rotate(15deg);
 }
 .hero-head p {
-  color: var(--muted);
+  @apply text-muted;
   font-size: 18px;
 }
 .stage {
   height: clamp(365px, 31vw, 480px);
-  position: relative;
 }
 .portrait {
   height: 110%;
-  width: auto;
-  position: absolute;
   bottom: -6%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  pointer-events: none;
 }
 .halo {
-  position: absolute;
   bottom: -160px;
   left: 50%;
   transform: translateX(-50%);
@@ -228,22 +213,15 @@ h1 sup img {
   background: #f7dce3;
 }
 .side {
-  position: absolute;
   z-index: 2;
   top: 19%;
   bottom: 12%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 .left {
   left: 0;
-  text-align: left;
 }
 .right {
   right: 0;
-  align-items: flex-end;
-  text-align: right;
 }
 .location small,
 .seal span {
@@ -253,8 +231,7 @@ h1 sup img {
   letter-spacing: 0.15em;
 }
 .location small {
-  color: var(--muted);
-  display: block;
+  @apply text-muted block;
   margin-bottom: 9px;
 }
 .location b {
@@ -265,22 +242,21 @@ h1 sup img {
   width: 16px;
 }
 .faces {
-  display: flex;
   margin-bottom: 7px;
 }
 .faces img {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--paper);
+  @apply object-cover;
+  border: 2px solid var(--color-paper);
 }
 .faces img + img {
   margin-left: -9px;
 }
 .clients strong,
 .clients small {
-  display: block;
+  @apply block;
 }
 .clients strong {
   font-size: 21px;
@@ -291,14 +267,14 @@ h1 sup img {
   letter-spacing: -0.3px;
 }
 .clients small {
-  color: var(--muted);
+  @apply text-muted;
 }
 .statement > span {
-  display: block;
+  @apply block;
   font:
     900 62px/0.65 Georgia,
     serif;
-  color: var(--pink);
+  @apply text-brand;
 }
 .statement p {
   font-size: 17px;
@@ -306,101 +282,80 @@ h1 sup img {
   letter-spacing: -0.5px;
 }
 .tags {
-  display: flex;
-  flex-wrap: wrap;
   width: 230px;
   gap: 5px;
-  justify-content: flex-end;
 }
 .tags b {
   font-size: 12px;
   border-radius: 20px;
-  background: var(--ink);
-  color: white;
+  @apply bg-ink text-white;
   padding: 4px 13px;
 }
 .tags b:nth-child(3n + 2),
 .tags b:nth-child(3) {
   background: #ffb7cb;
-  color: var(--ink);
+  @apply text-ink;
 }
 .seal {
-  position: absolute;
   right: 2%;
   top: -105px;
   width: 94px;
   height: 94px;
-  background: var(--ink);
-  color: white;
-  border: 4px double var(--paper);
+  border: 4px double var(--color-paper);
   border-radius: 50%;
   transform: rotate(12deg);
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   gap: 5px;
 }
 .seal span {
   font-size: 8px;
 }
 .seal img {
-  background: var(--pink);
+  @apply bg-brand;
   width: 31px;
   height: 31px;
   padding: 7px;
   border-radius: 50%;
 }
 .actions {
-  position: absolute;
   z-index: 3;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
   padding: 4px;
-  background: var(--paper);
-  border: 1px solid var(--ink);
+  border: 1px solid var(--color-ink);
   border-radius: 40px;
   box-shadow: 0 3px 0 #221d2030;
-  white-space: nowrap;
 }
 .actions a {
-  justify-content: center;
+  @apply justify-center;
   gap: 9px;
   border-radius: 25px;
   padding: 10px 18px;
-  font-weight: 700;
+  @apply font-bold;
   font-size: 15px;
 }
 .actions a:first-child {
-  background: var(--pink);
+  @apply bg-brand;
 }
 .actions a:last-child {
-  border: 1px solid var(--ink);
+  border: 1px solid var(--color-ink);
   margin-left: 4px;
 }
 .actions i {
   width: 22px;
   height: 22px;
-  background: var(--ink);
+  @apply bg-ink;
 }
 .actions i img {
   width: 13px;
   filter: invert(1);
 }
 .strip {
-  background: var(--ink);
-  color: white;
-  overflow: hidden;
-  border-bottom: 4px solid var(--pink);
-  position: relative;
+  border-bottom: 4px solid var(--color-brand);
 }
 .strip div {
-  width: max-content;
-  display: flex;
-  align-items: center;
+  @apply w-max flex items-center;
   gap: 38px;
   padding: 16px 0;
   transform: translateX(-78px);
@@ -419,20 +374,16 @@ h1 sup img {
 .eyebrow {
   gap: 9px;
   font-size: 13px;
-  font-weight: 600;
 }
 .eyebrow i {
   width: 12px;
   height: 12px;
-  background: var(--ink);
+  @apply bg-ink;
   border-radius: 50%;
-  box-shadow: 5px 0 var(--pink);
+  box-shadow: 5px 0 var(--color-brand);
   margin-right: 5px;
 }
 .heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 24px;
 }
 h2 {
@@ -440,23 +391,19 @@ h2 {
   margin: 12px 0 25px;
 }
 .link {
-  border: 1px solid var(--ink);
-  background: var(--blush);
+  border: 1px solid var(--color-ink);
   padding: 6px 7px 6px 17px;
   font-size: 13px;
 }
 .link .icon {
-  background: var(--pink);
+  @apply bg-brand;
   padding: 6px;
   width: 28px;
   height: 28px;
 }
-.services {
-  display: grid;
-  gap: 10px;
-}
-details {
-  background: white;
+
+.services details {
+  @apply bg-white;
   clip-path: polygon(
     15px 0,
     100% 0,
@@ -467,39 +414,37 @@ details {
   );
   border-bottom: 1px solid #e5dbde;
 }
-details[open] {
-  background: var(--ink);
-  color: white;
+.services details[open] {
+  @apply bg-ink text-white;
 }
-summary {
+.services summary {
   list-style: none;
-  cursor: pointer;
-  display: grid;
+  @apply cursor-pointer grid;
   grid-template-columns: 20% 1fr 32px;
-  align-items: center;
+  @apply items-center;
   padding: 19px 25px;
 }
-summary::-webkit-details-marker {
-  display: none;
+.services summary::-webkit-details-marker {
+  @apply hidden;
 }
-summary strong {
+.services summary strong {
   font-size: clamp(21px, 2.2vw, 32px);
   line-height: 1.2;
   letter-spacing: -1px;
 }
-summary small {
+.services summary small {
   color: #b0274b;
-  font-weight: 700;
+  @apply font-bold;
 }
-details[open] summary small {
+.services details[open] summary small {
   color: #ff8aa5;
 }
-summary i {
-  background: var(--pink);
+.services summary i {
+  @apply bg-brand;
   width: 31px;
   height: 31px;
 }
-details[open] summary i {
+.services details[open] summary i {
   transform: rotate(90deg);
 }
 .service-body {
@@ -507,7 +452,7 @@ details[open] summary i {
   max-width: 530px;
 }
 .service-body span {
-  display: inline-block;
+  @apply inline-block;
   border: 1px solid #70646a;
   border-radius: 20px;
   padding: 3px 9px;
@@ -520,46 +465,38 @@ details[open] summary i {
   margin-top: 9px;
 }
 .dark {
-  background: var(--ink);
-  color: white;
-  border-top: 3px solid var(--pink);
+  border-top: 3px solid var(--color-brand);
 }
 .dark .eyebrow i {
   background: #fff;
 }
 .about {
-  display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 8%;
-  align-items: center;
   padding-block: 68px;
 }
 .about-photo {
   height: 340px;
-  overflow: hidden;
   clip-path: polygon(6% 0, 100% 0, 100% 94%, 94% 100%, 0 100%, 0 6%);
 }
 .about-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  @apply w-full h-full object-cover;
   object-position: center 32%;
 }
 .about .link {
   margin-top: 26px;
-  color: var(--ink);
+  @apply text-ink;
 }
 .projects {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 .projects img {
-  width: 100%;
+  @apply w-full;
   aspect-ratio: 1.5;
-  object-fit: cover;
+  @apply object-cover;
   border-radius: 12px;
-  display: block;
+  @apply block;
 }
 .projects .project-title {
   margin-top: 9px;
@@ -583,8 +520,6 @@ footer .wrap {
   border-top: 1px solid #52474e;
   margin-top: 40px;
   padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
   gap: 16px;
   font-size: 13px;
 }
@@ -655,8 +590,7 @@ footer .wrap {
     font-size: 13px;
   }
   .menu {
-    display: grid;
-    place-items: center;
+    @apply grid place-items-center;
     width: 35px;
     height: 35px;
     background: transparent;
@@ -668,16 +602,15 @@ footer .wrap {
     height: 24px;
   }
   .top nav {
-    display: none;
-    position: absolute;
+    @apply hidden absolute;
     inset: 60px 0 auto;
-    background: var(--ink);
+    @apply bg-ink;
     border-radius: 18px;
     padding: 14px 20px;
     gap: 0;
   }
   .top nav.open {
-    display: grid;
+    @apply grid;
   }
   .top nav a {
     padding: 9px;
@@ -713,7 +646,7 @@ footer .wrap {
   }
   .left,
   .right {
-    display: none;
+    @apply hidden;
   }
   .seal {
     top: 25px;
@@ -742,8 +675,7 @@ footer .wrap {
     padding-block: 45px;
   }
   .heading {
-    align-items: flex-start;
-    flex-direction: column;
+    @apply items-start flex-col;
     gap: 0;
   }
   .heading .link {
@@ -752,7 +684,7 @@ footer .wrap {
   .heading h2 {
     margin-bottom: 16px;
   }
-  summary {
+  .services summary {
     padding: 16px;
     grid-template-columns: 14% 1fr 28px;
   }
@@ -775,7 +707,7 @@ footer .wrap {
     font-size: 14px;
   }
   .foot {
-    flex-wrap: wrap;
+    @apply flex-wrap;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -788,19 +720,18 @@ footer .wrap {
   display: none !important;
 }
 .visually-hidden {
-  position: absolute;
+  @apply absolute;
   width: 1px;
   height: 1px;
-  overflow: hidden;
+  @apply overflow-hidden;
   clip-path: inset(50%);
-  white-space: nowrap;
+  @apply whitespace-nowrap;
 }
 .statement p {
   max-width: 225px;
 }
 .filters {
-  display: flex;
-  flex-wrap: wrap;
+  @apply flex flex-wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
@@ -809,24 +740,20 @@ footer .wrap {
   background: transparent;
   border-radius: 2rem;
   padding: 0.5rem 1rem;
-  color: var(--ink);
+  @apply text-ink;
 }
 .filters [aria-pressed="true"] {
-  background: var(--ink);
-  color: white;
-  font-weight: 700;
+  @apply bg-ink text-white font-bold;
 }
 .projects a {
-  display: block;
+  @apply block;
 }
 .projects .project-title span {
   color: #b0274b;
 }
-.process {
-  padding-bottom: 70px;
-}
+
 .process ol {
-  display: grid;
+  @apply grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
   padding: 0;
@@ -834,13 +761,13 @@ footer .wrap {
   list-style: none;
 }
 .process li {
-  border-top: 2px solid var(--pink);
+  border-top: 2px solid var(--color-brand);
   padding-top: 1.2rem;
   counter-increment: step;
 }
 .process li::before {
   content: counter(step, decimal-leading-zero);
-  font-weight: 700;
+  @apply font-bold;
   color: #a92c50;
 }
 h3 {
@@ -851,18 +778,18 @@ h3 {
 .process p,
 .journal-row p,
 .lead {
-  color: var(--muted);
+  @apply text-muted;
 }
 .journal {
   background: #fff0f4;
 }
 .journal-row {
-  display: grid;
+  @apply grid;
   grid-template-columns: minmax(90px, 1fr) 4fr auto;
   gap: 2rem;
   padding: 1.5rem 0;
   border-top: 1px solid #d4bfc6;
-  align-items: center;
+  @apply items-center;
 }
 .journal-row:hover h3,
 .back:hover {
@@ -873,7 +800,7 @@ h3 {
   padding-block: 70px 90px;
 }
 .entry .eyebrow {
-  display: block;
+  @apply block;
   margin: 2rem 0 0.5rem;
   color: #a92c50;
 }
@@ -888,7 +815,7 @@ h3 {
 .entry-image {
   max-width: 100%;
   max-height: 680px;
-  display: block;
+  @apply block;
   margin: 2rem auto;
 }
 .prose {
@@ -901,10 +828,7 @@ h3 {
   margin: 2rem 0 0.65rem;
   letter-spacing: -0.045em;
 }
-.review {
-  padding: 1.5rem;
-  background: white;
-}
+
 .review blockquote {
   margin: 0 0 1rem;
 }
@@ -924,20 +848,17 @@ h3 {
     padding-block: 40px;
   }
   .top:not(.enhanced) {
-    height: auto;
-    flex-wrap: wrap;
+    @apply h-auto flex-wrap;
   }
   .top:not(.enhanced) nav {
     position: static;
     order: 3;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    @apply flex flex-wrap w-full;
     padding: 4px;
     font-size: 0.8rem;
   }
   .top:not(.enhanced) .menu {
-    display: none;
+    @apply hidden;
   }
 }
 @media (prefers-reduced-motion: no-preference) {

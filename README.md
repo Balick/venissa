@@ -1,6 +1,6 @@
 # Venissa portfolio
 
-A static Astro portfolio for an independent designer. The home page introduces the designer, services, selected projects, process, journal and contact details. Every project and journal entry has its own shareable page.
+A static Astro portfolio built with React and Tailwind CSS for an independent designer. The home page introduces the designer, services, selected projects, process, journal and contact details. Every project and journal entry has its own shareable page.
 
 ## Quick start
 
@@ -21,12 +21,15 @@ npm run preview
 
 Deploy the contents of `dist/` to a static host at the root of a domain. The site needs no server-side runtime, account or API key. Email and telephone links open the visitor’s configured applications.
 
+Astro owns routing, Markdown collections and static generation. The interface lives in React components in `src/components/`. Only the header and project filters hydrate in the browser. Tailwind CSS is compiled through its Vite plugin. Shared theme colors and component styles live in `src/styles/portfolio.css`.
+
 ## Make it yours
 
 | Content                                                           | Location                     |
 | ----------------------------------------------------------------- | ---------------------------- |
 | Name, biography, portraits, contact details and portfolio metrics | `src/data/profile.json`      |
 | Service descriptions and tags                                     | `src/data/services.json`     |
+| Dated journey milestones                                          | `src/data/journey.json`      |
 | Project process                                                   | `src/data/process.json`      |
 | Client testimonials                                               | `src/data/testimonials.json` |
 | Project pages                                                     | `src/content/projects/*.md`  |
