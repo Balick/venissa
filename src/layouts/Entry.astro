@@ -6,11 +6,11 @@ type Props = Omit<
   import("react").ComponentProps<typeof EntryArticle>,
   "children"
 >;
-const { data, section } = Astro.props;
+const { data, section, next } = Astro.props;
 ---
 
 <Layout title={`${data.title} — ${profile.name}`} description={data.summary}>
-  <EntryArticle data={data} section={section}>
+  <EntryArticle next={next} data={data} section={section}>
     <slot />
   </EntryArticle>
 </Layout>

@@ -1,7 +1,7 @@
 import steps from "../data/process.json";
 export default function Process() {
   return (
-    <section className="wrap process pb-[70px]">
+    <section id="process" className="wrap process pb-[70px]">
       <div className="eyebrow font-semibold">
         <i></i> My process
       </div>

@@ -2,37 +2,47 @@
   {
     "date": "2018-06-26",
     "title": "Information gathering",
-    "summary": "The starting point recorded in the original journey.",
-    "detail": "This is the first dated entry in the original portfolio timeline."
+    "detail": "Who will use the design? What do they need? The first portfolio entry opens with the research that shapes a brief.",
+    "link": {
+      "href": "#process",
+      "label": "Explore the process"
+    }
   },
   {
     "date": "2022-07-18",
-    "title": "The portfolio begins",
-    "summary": "The first version of the site enters development.",
-    "detail": "The initial project established a shared home for the designer’s profile and work."
+    "title": "The first portfolio",
+    "detail": "The first site brought the profile and creative work together in one place. The introduction remains the starting point for getting to know the designer.",
+    "link": {
+      "href": "#about",
+      "label": "Meet Venissa"
+    }
   },
   {
     "date": "2022-07-20",
-    "title": "A gallery for selected work",
-    "summary": "Projects gain a dedicated place on the page.",
-    "detail": "The first project section brought examples together so visitors could browse beyond the introduction."
+    "title": "A home for selected work",
+    "detail": "The project gallery gave each design a place of its own. Browse the collection by discipline to see how the layouts change between websites and interfaces.",
+    "link": {
+      "href": "#work",
+      "label": "Browse selected work"
+    }
   },
   {
     "date": "2022-08-04",
-    "title": "Space for client feedback",
-    "summary": "The testimonial section takes shape.",
-    "detail": "The early portfolio introduced a section for client voices. The current template keeps this section editable and displays it when approved quotes are available."
+    "title": "Client perspectives",
+    "detail": "A dedicated feedback section joined the portfolio, giving client perspectives a place alongside the finished work."
   },
   {
     "date": "2023-03-21",
-    "title": "The journey becomes a timeline",
-    "summary": "Dated cards bring the portfolio’s history into view.",
-    "detail": "A vertical line joined the milestones, alternating between left and right on larger screens. This layout carries that idea forward."
+    "title": "The journey takes shape",
+    "detail": "Dated milestones joined the project gallery. The alternating layout lets the reader follow the portfolio from its first brief through its later editions."
   },
   {
     "date": "2026-11-15",
-    "title": "A content-driven portfolio",
-    "summary": "Individual project pages and a design journal arrive.",
-    "detail": "Astro builds each entry from Markdown. New work and articles can now be published by adding a content file."
+    "title": "Inside the design",
+    "detail": "Project pages now take a closer look at composition, type and interaction. The journal follows those decisions from the initial sketch to handoff.",
+    "link": {
+      "href": "#journal",
+      "label": "Read the journal"
+    }
   }
 ]

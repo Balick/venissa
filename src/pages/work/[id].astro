@@ -2,16 +2,25 @@
 import { getCollection, render } from "astro:content";
 import Entry from "../../layouts/Entry.astro";
 export async function getStaticPaths() {
-  const entries = await getCollection("projects");
-  return entries.map((entry) => ({
-    params: { id: entry.id },
-    props: { entry },
-  }));
+  const entries = (await getCollection("projects")).sort(
+    (a, b) => a.data.order - b.data.order || a.id.localeCompare(b.id),
+  );
+  return entries.map((entry, index) => {
+    const following =
+      entries.length > 1 ? entries[(index + 1) % entries.length] : undefined;
+    return {
+      params: { id: entry.id },
+      props: {
+        entry,
+        next: following && { id: following.id, title: following.data.title },
+      },
+    };
+  });
 }
-const { entry } = Astro.props;
+const { entry, next } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<Entry data={entry.data} section="work">
+<Entry next={next} data={entry.data} section="work">
   <Content />
 </Entry>

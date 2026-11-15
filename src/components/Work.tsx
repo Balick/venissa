@@ -37,16 +37,28 @@ export default function Work({ projects }: { projects: Project[] }) {
           </button>
         ))}
       </div>
-      <div className="projects grid gap-6">
+      <div className="work-gallery grid grid-cols-12">
         {visible.map(({ id, data }) => (
-          <div className="project-card" key={id}>
+          <article className="work-card min-w-0" key={id}>
             <a href={`/work/${id}/`}>
-              <img src={data.image} alt={data.alt} loading="lazy" />
-              <div className="project-title">
-                {data.title} <span aria-hidden="true">↗</span>
+              <div className="work-mat grid items-end overflow-hidden rounded-[14px]">
+                <div className="work-screen h-full overflow-hidden bg-white">
+                  <img src={data.image} alt={data.alt} loading="lazy" />
+                </div>
+              </div>
+              <div className="work-caption flex items-center justify-between gap-4">
+                <div>
+                  <small>{data.category}</small>
+                  <h3>{data.title}</h3>
+                </div>
+                <img
+                  className="work-arrow"
+                  src="/icons/arrow-up-right.svg"
+                  alt=""
+                />
               </div>
             </a>
-          </div>
+          </article>
         ))}
       </div>
       <p className="visually-hidden" role="status">

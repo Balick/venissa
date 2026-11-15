@@ -7,9 +7,10 @@ interface Props {
     image?: string;
     alt?: string;
   };
+  next?: { id: string; title: string };
   section: "work" | "journal";
 }
-export default function EntryArticle({ data, section, children }: Props) {
+export default function EntryArticle({ data, section, next, children }: Props) {
   return (
     <article className="wrap entry mx-auto">
       <a className="back" href={`/#${section}`}>
@@ -24,6 +25,29 @@ export default function EntryArticle({ data, section, children }: Props) {
         </a>
       )}
       <div className="prose">{children}</div>
+      {next && (
+        <nav
+          aria-label="Continue exploring"
+          className="mt-12 border-0 border-t border-solid border-[#d6c8ce] pt-6"
+        >
+          <a
+            href={`/${section}/${next.id}/`}
+            className="group flex items-center justify-between gap-4"
+          >
+            <div>
+              <small className="text-muted">
+                {section === "work" ? "Next project" : "Next article"}
+              </small>
+              <h3 className="group-hover:underline">{next.title}</h3>
+            </div>
+            <img
+              className="size-10 rounded-full bg-blush p-2.5"
+              src="/icons/arrow-right.svg"
+              alt=""
+            />
+          </a>
+        </nav>
+      )}
     </article>
   );
 }

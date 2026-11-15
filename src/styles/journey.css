@@ -1,0 +1,186 @@
+.journey {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border-block: 3px solid var(--color-brand);
+}
+.journey .eyebrow i {
+  background: var(--color-paper);
+}
+
+.journey-heading h2 {
+  margin-bottom: 0;
+}
+.year-index {
+  padding: 0.3rem;
+  border: 1px solid #61575d;
+}
+.year-index a {
+  padding: 0.45rem 0.75rem;
+  border-radius: 2rem;
+  font-size: 0.8125rem;
+  font-weight: 650;
+}
+.year-index a:hover,
+.year-index a:focus-visible {
+  background: var(--color-blush);
+  color: var(--color-ink);
+}
+
+.journey-track::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: #885564;
+}
+.journey-track li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  position: relative;
+  gap: clamp(3rem, 7vw, 7rem);
+  padding: 1.1rem 0;
+  scroll-margin-top: 1.5rem;
+}
+.journey-track li::before {
+  content: "";
+  position: absolute;
+  top: 2.4rem;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border: 3px solid var(--color-ink);
+  border-radius: 50%;
+  outline: 1px solid #d889a0;
+  background: var(--color-brand);
+  transform: translateX(-50%);
+}
+.journey-track time {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+.journey-track time strong {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+  color: #f2c0d0;
+}
+.journey-track time span {
+  color: #d2c4ca;
+  font-size: 0.82rem;
+}
+.journey-track li:nth-child(even) time {
+  grid-column: 2;
+  grid-row: 1;
+  align-items: start;
+}
+.journey-track li:nth-child(even) .journey-note {
+  grid-column: 1;
+  grid-row: 1;
+}
+.journey-note {
+  border-top: 1px solid #77666d;
+  padding-top: 0.6rem;
+}
+.journey-note summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  list-style: none;
+  cursor: pointer;
+}
+.journey-note summary::-webkit-details-marker {
+  display: none;
+}
+.journey-note h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.1vw, 2rem);
+  line-height: 1.1;
+}
+.fold-mark {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #8f7580;
+  border-radius: 50%;
+}
+.fold-mark::before {
+  content: "+";
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.journey-note[open] .fold-mark {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+  color: var(--color-ink);
+}
+.journey-note[open] .fold-mark::before {
+  content: "−";
+}
+.journey-body {
+  color: #dcced4;
+  padding: 0.55rem 0 0.8rem;
+}
+.journey-body a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: #ffa9c1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.journey-track li:target .journey-note {
+  border-color: var(--color-brand);
+}
+.journey + .process {
+  padding-top: clamp(3rem, 6vw, 5rem);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .journey-note[open] .journey-body {
+    animation: enter 0.24s ease-out both;
+  }
+}
+@media (max-width: 760px) {
+  .journey-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .year-index {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  .journey-track::before,
+  .journey-track li::before {
+    left: 6px;
+  }
+  .journey-track li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem 0 1.5rem 1.9rem;
+  }
+  .journey-track li::before {
+    top: 1.5rem;
+  }
+  .journey-track li time,
+  .journey-track li:nth-child(even) time {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.65rem;
+  }
+  .journey-track time strong {
+    font-size: 2rem;
+  }
+  .journey-note {
+    width: 100%;
+  }
+}

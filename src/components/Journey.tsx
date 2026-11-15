@@ -1,57 +1,72 @@
 import milestones from "../data/journey.json";
-const dateLabel = new Intl.DateTimeFormat("en-GB", {
+import "../styles/journey.css";
+
+const monthDay = new Intl.DateTimeFormat("en-GB", {
   day: "numeric",
   month: "long",
-  year: "numeric",
   timeZone: "UTC",
 });
+const years = [...new Set(milestones.map(({ date }) => date.slice(0, 4)))];
+
 export default function Journey() {
+  if (!milestones.length) return null;
+
   return (
-    <section
-      id="journey"
-      aria-labelledby="journey-title"
-      className="wrap section"
-    >
-      <div className="eyebrow font-semibold">
-        <i /> My journey
-      </div>
-      <h2 id="journey-title">
-        Portfolio <em>milestones.</em>
-      </h2>
-      <ol className="relative m-0 list-none space-y-5 p-0 before:absolute before:inset-y-0 before:left-3 before:w-0.5 before:bg-brand md:before:left-1/2 md:before:-translate-x-1/2">
-        {milestones.map((milestone, index) => (
-          <li
-            key={milestone.date}
-            className="relative pl-10 md:grid md:grid-cols-2 md:gap-16 md:pl-0"
+    <section id="journey" className="journey" aria-labelledby="journey-title">
+      <div className="wrap section">
+        <header className="journey-heading mb-10 flex items-end justify-between gap-8">
+          <div>
+            <div className="eyebrow">
+              <i /> My journey
+            </div>
+            <h2 id="journey-title">
+              The portfolio <em>over time.</em>
+            </h2>
+          </div>
+          <nav
+            aria-label="Jump to a year"
+            className="year-index flex gap-1 rounded-full"
           >
-            <span
-              aria-hidden="true"
-              className="absolute top-6 left-[5px] size-4 rounded-full border-4 border-solid border-brand bg-paper md:left-1/2 md:-translate-x-1/2"
-            />
-            <article
-              className={`rounded-2xl border border-solid border-[#e2d6da] bg-white p-5 md:p-6 ${index % 2 ? "md:col-start-2" : "md:text-right"}`}
-            >
-              <time
-                dateTime={milestone.date}
-                className="text-xs font-bold tracking-wide text-[#ac2146] uppercase"
+            {years.map((year) => (
+              <a key={year} href={`#journey-${year}`}>
+                {year}
+              </a>
+            ))}
+          </nav>
+        </header>
+        <ol className="journey-track relative m-0 list-none p-0">
+          {milestones.map((item, index) => {
+            const year = item.date.slice(0, 4);
+            const firstInYear =
+              index === 0 || !milestones[index - 1].date.startsWith(year);
+            return (
+              <li
+                key={item.date + item.title}
+                id={firstInYear ? `journey-${year}` : undefined}
               >
-                {dateLabel.format(new Date(milestone.date))}
-              </time>
-              <h3>{milestone.title}</h3>
-              <p className="text-muted">{milestone.summary}</p>
-              <details className="mt-3">
-                <summary className="cursor-pointer text-sm font-semibold text-[#a32145] hover:underline">
-                  Read more
-                  <span className="sr-only"> about {milestone.title}</span>
-                </summary>
-                <p className="mt-2 text-sm leading-relaxed text-muted motion-safe:animate-[enter_.25s_ease-out]">
-                  {milestone.detail}
-                </p>
-              </details>
-            </article>
-          </li>
-        ))}
-      </ol>
+                <time dateTime={item.date}>
+                  <strong>{year}</strong>
+                  <span>{monthDay.format(new Date(item.date))}</span>
+                </time>
+                <details className="journey-note" open={index === 0}>
+                  <summary>
+                    <h3>{item.title}</h3>
+                    <span aria-hidden="true" className="fold-mark" />
+                  </summary>
+                  <div className="journey-body max-w-[48ch]">
+                    <p>{item.detail}</p>
+                    {item.link && (
+                      <a href={item.link.href}>
+                        {item.link.label} <span aria-hidden="true">↗</span>
+                      </a>
+                    )}
+                  </div>
+                </details>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
     </section>
   );
 }
