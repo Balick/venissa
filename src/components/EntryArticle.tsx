@@ -5,6 +5,7 @@ interface Props {
     summary: string;
     category: string;
     image?: string;
+    previewUrl?: string;
     alt?: string;
   };
   next?: { id: string; title: string };
@@ -19,6 +20,17 @@ export default function EntryArticle({ data, section, next, children }: Props) {
       <p className="eyebrow font-semibold">{data.category}</p>
       <h1>{data.title}</h1>
       <p className="lead">{data.summary}</p>
+      {data.previewUrl && (
+        <a
+          className="link bg-blush my-4 text-ink"
+          href={data.previewUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Live preview<span className="sr-only"> (opens in a new tab)</span>
+          <img className="icon" src="/icons/arrow-up-right.svg" alt="" />
+        </a>
+      )}
       {data.image && (
         <a href={data.image} aria-label={`View ${data.title} at full size`}>
           <img className="entry-image" src={data.image} alt={data.alt} />

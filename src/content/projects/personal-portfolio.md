@@ -3,6 +3,7 @@ title: Personal portfolio
 category: Web design
 summary: "A black-and-yellow portfolio pairs a prominent portrait with compact sections for services and contact."
 order: 4
+previewUrl: https://balick.me/
 image: /images/project4.jpeg
 alt: "A black-and-yellow portfolio pairs a prominent portrait with compact sections for services and contact."
 ---

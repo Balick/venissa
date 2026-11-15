@@ -3,6 +3,7 @@ title: Learning dashboard
 category: UI design
 summary: "A learning dashboard brings course discovery, lesson previews and upcoming activity into one view."
 order: 2
+previewUrl: https://balick.me/
 image: /images/project2.png
 alt: "A learning dashboard brings course discovery, lesson previews and upcoming activity into one view."
 ---

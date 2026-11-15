@@ -51,3 +51,5 @@ Run `npm run format`, `npm run check` and `npm run build` before submitting a ch
 ## License and assets
 
 The template code is available under the [MIT License](LICENSE). DM Sans and Bootstrap Icons retain their own license notices. The supplied demo portraits, client photographs and project screenshots have separate reuse conditions. See [asset notices](ASSETS.md).
+
+Each project can set an optional HTTP or HTTPS `previewUrl` in its Markdown front matter. The six demo links point to `https://balick.me/`. Replace them with your project URLs when personalizing the template.

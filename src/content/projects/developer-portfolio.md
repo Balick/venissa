@@ -3,6 +3,7 @@ title: Developer portfolio
 category: Web design
 summary: "An atmospheric mountain photograph introduces a developer portfolio with a restrained dark palette."
 order: 6
+previewUrl: https://balick.me/
 image: /images/project6.jpeg
 alt: "An atmospheric mountain photograph introduces a developer portfolio with a restrained dark palette."
 ---

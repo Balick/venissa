@@ -93,20 +93,26 @@ export default function Hero() {
         className="strip bg-ink text-white overflow-hidden relative"
         aria-hidden="true"
       >
-        <div>
-          {Array.from({ length: 3 }, (_, repeat) =>
-            [
-              "Graphic Design",
-              "Web Development",
-              "Visual Identity",
-              "UI/UX Design",
-            ].map((item) => (
-              <Fragment key={repeat + item}>
-                <img className="icon block" src="/icons/asterisk.svg" alt="" />
-                <span>{item}</span>
-              </Fragment>
-            )),
-          )}
+        <div className="strip-track">
+          {Array.from({ length: 4 }, (_, index) => (
+            <div className="strip-group" key={index}>
+              {[
+                "Graphic Design",
+                "Web Development",
+                "Visual Identity",
+                "UI/UX Design",
+              ].map((item) => (
+                <Fragment key={item}>
+                  <img
+                    className="icon block"
+                    src="/icons/asterisk.svg"
+                    alt=""
+                  />
+                  <span>{item}</span>
+                </Fragment>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </>

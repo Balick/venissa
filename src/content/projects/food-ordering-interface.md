@@ -3,6 +3,7 @@ title: Food ordering interface
 category: UI design
 summary: "A food ordering screen organizes dishes by category and gives the current order a dedicated column."
 order: 3
+previewUrl: https://balick.me/
 image: /images/project3.png
 alt: "A food ordering screen organizes dishes by category and gives the current order a dedicated column."
 ---

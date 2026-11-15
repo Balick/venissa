@@ -3,6 +3,7 @@ title: Night landscape
 category: Web design
 summary: "A night-sky landing page uses the horizon as a natural break between the introduction and the story below."
 order: 1
+previewUrl: https://balick.me/
 image: /images/project1.jpeg
 alt: "A night-sky landing page uses the horizon as a natural break between the introduction and the story below."
 ---

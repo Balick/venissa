@@ -3,6 +3,7 @@ title: Game showcase
 category: Visual design
 summary: "A character-led showcase gives each game a distinct red, gold or violet color treatment."
 order: 5
+previewUrl: https://balick.me/
 image: /images/project5.jpeg
 alt: "A character-led showcase gives each game a distinct red, gold or violet color treatment."
 ---

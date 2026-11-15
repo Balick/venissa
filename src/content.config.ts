@@ -10,7 +10,11 @@ const entry = z.object({
 export const collections = {
   projects: defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
-    schema: entry.extend({ image: z.string(), alt: z.string().min(1) }),
+    schema: entry.extend({
+      image: z.string(),
+      alt: z.string().min(1),
+      previewUrl: z.url({ protocol: /^https?$/ }).optional(),
+    }),
   }),
   journal: defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/content/journal" }),
