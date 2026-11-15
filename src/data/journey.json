@@ -1,0 +1,48 @@
+[
+  {
+    "date": "2018-06-26",
+    "title": "Information gathering",
+    "detail": "Who will use the design? What do they need? The first portfolio entry opens with the research that shapes a brief.",
+    "link": {
+      "href": "#process",
+      "label": "Explore the process"
+    }
+  },
+  {
+    "date": "2022-07-18",
+    "title": "The first portfolio",
+    "detail": "The first site brought the profile and creative work together in one place. The introduction remains the starting point for getting to know the designer.",
+    "link": {
+      "href": "#about",
+      "label": "Meet Venissa"
+    }
+  },
+  {
+    "date": "2022-07-20",
+    "title": "A home for selected work",
+    "detail": "The project gallery gave each design a place of its own. Browse the collection by discipline to see how the layouts change between websites and interfaces.",
+    "link": {
+      "href": "#work",
+      "label": "Browse selected work"
+    }
+  },
+  {
+    "date": "2022-08-04",
+    "title": "Client perspectives",
+    "detail": "A dedicated feedback section joined the portfolio, giving client perspectives a place alongside the finished work."
+  },
+  {
+    "date": "2023-03-21",
+    "title": "The journey takes shape",
+    "detail": "Dated milestones joined the project gallery. The alternating layout lets the reader follow the portfolio from its first brief through its later editions."
+  },
+  {
+    "date": "2026-11-15",
+    "title": "Inside the design",
+    "detail": "Project pages now take a closer look at composition, type and interaction. The journal follows those decisions from the initial sketch to handoff.",
+    "link": {
+      "href": "#journal",
+      "label": "Read the journal"
+    }
+  }
+]

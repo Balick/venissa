@@ -1,0 +1,16 @@
+---
+import Layout from "./Layout.astro";
+import profile from "../data/profile.json";
+import EntryArticle from "../components/EntryArticle";
+type Props = Omit<
+  import("react").ComponentProps<typeof EntryArticle>,
+  "children"
+>;
+const { data, section, next } = Astro.props;
+---
+
+<Layout title={`${data.title} — ${profile.name}`} description={data.summary}>
+  <EntryArticle next={next} data={data} section={section}>
+    <slot />
+  </EntryArticle>
+</Layout>

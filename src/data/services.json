@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Graphic Design",
+    "tags": ["Visual identity", "Typography", "Print design"],
+    "description": "Brand identities, editorial layouts and campaign visuals built around a clear visual idea."
+  },
+  {
+    "title": "Website Design",
+    "tags": ["Landing pages", "Responsive design", "Web layouts"],
+    "description": "Distinctive websites with clear navigation, considered layouts and room for your content to breathe."
+  },
+  {
+    "title": "UI/UX Design",
+    "tags": ["Wireframes", "Prototypes", "Interface design"],
+    "description": "From the first wireframe to the final interface, I design the small interactions that make digital products easier to use."
+  },
+  {
+    "title": "Web Development",
+    "tags": ["Front end", "Responsive layouts", "Interaction"],
+    "description": "Responsive front ends that turn design concepts into accessible, usable websites."
+  }
+]
