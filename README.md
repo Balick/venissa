@@ -2,6 +2,8 @@
 
 A static Astro portfolio built with React and Tailwind CSS for an independent designer. The home page introduces the designer, services, selected projects, process, journal and contact details. Every project and journal entry has its own shareable page.
 
+![Venissa Larence’s portfolio homepage with her portrait, services and contact links](docs/images/portfolio-preview.jpg)
+
 ## Quick start
 
 Use Node.js 24 LTS and npm. From the repository root, run the following commands.
